@@ -1,7 +1,15 @@
 # Multi-Threaded Task Scheduler & Thread Pool Engine (C++20)
 
 A high-performance, interactive C++20 Thread Pool and Priority-Based Task Scheduler Engine designed for concurrent execution, dynamic priority management, and real-time thread synchronization.
+---
 
+## 📁 Project Structure
+
+* **`Task.h / Task.cpp`**: Abstract `Task` base class and concrete implementations (`ComputeTask`, `FileIoTask`, `NetworkTask`).
+* **`TaskFactory.h / TaskFactory.cpp`**: Static factory using atomic ID generation to instantiate move-only tasks.
+* **`ThreadPool.h / ThreadPool.cpp`**: Thread pool manager handling worker loops, condition variables, and RAII shutdown.
+* **`Scheduler.h / Scheduler.cpp`**: Priority queue manager with `std::weak_ptr` task tracking.
+* **`main.cpp`**: Interactive CLI dashboard and system controller.
 ---
 
 ## 🌟 Key Features & Technical Highlights
